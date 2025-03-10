@@ -1,8 +1,24 @@
 import supabase from "../config/supabase.js";
 
 const TryoutModel = {
-  async getAllTryouts() {
-    const { data, error } = await supabase.from("tryout").select("*");
+  async getAllTryouts({ title, category, date }) {
+    let query = supabase.from("tryout").select("*");
+
+    if (title) {
+      query = query.ilike("title", `%${title}%`);
+    }
+
+    if (category) {
+      query = query.ilike("category", `%${category}%`);
+    }
+
+    if (date) {
+      query = query
+        .gte("created_at", date)
+        .lte("created_at", `${date}T23:59:59.999Z`);
+    }
+
+    const { data, error } = await query;
     if (error) throw new Error(error.message);
     return data;
   },

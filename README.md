@@ -7,6 +7,7 @@ SUPABASE
 Completed Levels:
 
 - Level 1 was completed on March 10, 2025, at 02:00
+- Level 2 was completed on March 10, 2025, at 12:00
 
 Checklist:
 Level 1 ✅
@@ -17,15 +18,13 @@ Level 1 ✅
 - Edit Tryout
 - Delete Tryout
 
-Level 2
+Level 2 ✅
 
 - Filtering Title, Category, Created Date Tryout
 - Add Question (True/False)
 - Update Question
 - Delete Question
 - Validasi (hanya tryout yang belum memiliki submisi yang dapat ditambahkan/diedit/dihapus questions-nya)
-- Navigation Bar
-- Footer
 
 Level 3
 

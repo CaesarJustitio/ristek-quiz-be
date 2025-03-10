@@ -2,7 +2,8 @@ import TryoutModel from "../models/TryoutModel.js";
 
 export const getTryouts = async (req, res) => {
   try {
-    const tryouts = await TryoutModel.getAllTryouts();
+    const { title, category, date } = req.query;
+    const tryouts = await TryoutModel.getAllTryouts({ title, category, date });
     res.json(tryouts);
   } catch (error) {
     res.status(500).json({ error: error.message });
